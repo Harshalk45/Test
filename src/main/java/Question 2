@@ -1,0 +1,41 @@
+Problem 2: File Folder Tree Structure
+    
+    Display a file and folder structure in a frontend application that can accommodate any number of levels.
+
+Approach:
+
+Data Structure:
+       Each item in the structure is a node. Nodes can be either files or folders.
+       Folders can contain other nodes, which means they have a list of children nodes.
+
+Implementation:
+     Node Class: Define a class or a structure to represent each node in the backend. Each node includes:
+     name (String): The name of the file or folder.
+     type (String): Specifies if the node is a 'file' or a 'folder'.
+     children (List<Node>): Only folders will have children; files will not.
+
+Example Node Class:
+
+class Node {
+    String name;
+    String type; 
+    List<Node> children;
+
+    // Constructor, getters, setters
+}
+
+
+Frontend Display:
+
+    Use a tree view component in your frontend framework (e.g., React, Angular, Vue.js).
+    Implement recursive rendering to handle nested nodes. When a folder node is clicked, expand it to show its children.
+
+Performance Optimization:
+
+    Implement lazy loading for nodes. Load children nodes only when their parent node is expanded to reduce 
+    initial load times and enhance performance.
+
+Data Retrieval:
+
+   Design an API endpoint that returns the directory structure as a JSON object. The frontend will call this 
+   endpoint to fetch the data and render it.

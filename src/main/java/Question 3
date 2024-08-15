@@ -1,0 +1,33 @@
+Problem 3: Multi-Tenant Data Isolation
+
+       Ensuring data isolation in a multi-tenant application requires careful planning and implementation. 
+       
+
+Data Segregation:
+
+        Separate Databases: Each tenant has its own database. This is the most secure form of segregation 
+        but can be more expensive to maintain.
+
+Schema-based Segregation: Use a single database with different schemas for each tenant. 
+
+Row-based Segregation: Store all tenants' data in the same tables but add a tenant identifier to each row.
+
+Access Control:
+
+Authentication: Implement tenant-specific authentication to ensure users only access data belonging to their tenant.
+
+Authorization: Use a role-based access control (RBAC) system to manage user permissions within each tenant.
+
+Data Access Layer:
+    Develop a data access layer that enforces tenant isolation by automatically applying tenant filters to every query. 
+
+Encryption:
+Encrypt sensitive data at rest and in transit. Each tenant’s data can have unique encryption keys to add an additional layer of security.
+
+Audit and Monitoring:
+    Implement comprehensive logging and monitoring to track access and changes to data. 
+    Regularly audit these logs to detect and respond to unauthorized access.
+
+
+Data Backup and Recovery:
+   Maintain separate backup and recovery processes for each tenant’s data to ensure integrity and confidentiality during restoration processes.
